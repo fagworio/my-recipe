@@ -9,7 +9,7 @@
 * Author URI: https://www.unicorniohater.com.br/author/root/
 * Text Domain: myrps
 */
-
+ 
 if ( !function_exists( 'add_action' ) ) {
     echo "Hi there! I´m just a plugin, not much I can do when called directly.";
     exit;
@@ -27,7 +27,8 @@ include( 'includes/front/enqueue.php' );
 include( 'process/rate_recipe.php' );
 include( 'includes/admin/init.php' );
 include( 'blocks/enqueue.php' );
-
+include( dirname(RECIPES_PLUGIN_URL) . '/includes/widgets.php' );
+include( 'includes/widgets/daily-recipe.php' );
 // Hooks
 register_activation_hook( __FILE__, 'mr_activate_plugin' );
 add_action( 'init', 'my_recipe_init' );
@@ -39,6 +40,7 @@ add_action( 'wp_ajax_nopriv_mr_rate_recipe', 'mr_rate_recipe' );
 add_action( 'admin_init', 'mr_admin_init' );
 add_action( 'enqueue_block_editor_assets', 'mr_enqueue_block_editor_assets' );
 add_action( 'enqueue_block_assets', 'mr_enqueue_block_assets' );
+add_action( 'widgets_init', 'mr_widgets_init' );
 
 // Shortcodes
 
