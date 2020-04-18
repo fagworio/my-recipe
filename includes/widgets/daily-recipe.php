@@ -61,7 +61,38 @@ class MR_Daily_Recipe_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         // outputs the content of the widget
-        echo 'recipe of the day';
+        extract( $args );
+        extract( $instance );
+        $title      = apply_filters( 'widget_title', $title );
+        echo $before_widget;
+        echo $before_title . $title . $after_title;
+
+        $recipe_id      = get_transient( 'mr_daily_recipe' );
+        if( !$recipe_id ) {
+			$recipe_id	=	mr_get_random_recipe();
+			set_transient( 
+				'mr_daily_recipe', 
+				$recipe_id, 
+				DAY_IN_SECONDS 
+			);      
+		}
+		?>
+		<div class="portifolio-image">
+			<a href="<?php echo get_the_permalink( $recipe_id ); ?>">
+				<?php echo get_the_post_thumbnail( $recipe_id, 'thumbnail' ); ?>
+			</a>
+		</div>
+
+		<div class="portifolio-desc center nobottompadding">
+			<h3>
+				<a href="<?php echo get_the_permalink( $recipe_id ); ?>">
+					<?php echo get_the_title( $recipe_id ); ?>
+				</a>
+			</h3>
+		</div>
+
+		<?php 
+        echo $after_widget;
 	}
 }
     
