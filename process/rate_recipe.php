@@ -16,15 +16,15 @@ function mr_rate_recipe() {
         wp_send_json( $output ); 
     }
     
-    //  Insert Rating into database
-    $wpdb->insert(
-        $wpdb->prefix .'myrecipes_ratings',
-            array([
-                'recipe_id'     =>  $post_ID,
-                'rating'        =>  $rating,
-                'user_ip'       =>  $user_IP
-            ]),
-            [ '%d', '%f', '%s' ]
+      // Insert Rating into database
+      $wpdb->insert(
+        $wpdb->prefix . 'myrecipes_ratings',
+        [
+            'recipe_id' =>  $post_ID,
+            'rating'    =>  $rating,
+            'user_ip'   =>  $user_IP
+        ],
+        [ '%d', '%f', '%s' ]
     );
 
     // Update Recipe Metadata
