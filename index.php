@@ -29,8 +29,14 @@ include( 'includes/admin/init.php' );
 include( 'blocks/enqueue.php' );
 include( dirname(RECIPES_PLUGIN_URL) . '/includes/widgets.php' );
 include( 'includes/widgets/daily-recipe.php' );
+include( 'includes/cron.php' );
+include( 'includes/deactivate.php' );
+include( 'includes/utility.php' );
+
+
 // Hooks
 register_activation_hook( __FILE__, 'mr_activate_plugin' );
+register_deactivation_hook( __FILE__, 'mr_deactivate_plugin' );
 add_action( 'init', 'my_recipe_init' );
 add_action( 'save_post_myrecipe', 'mr_save_post_admin', 10, 3 );
 add_action( 'the_content', 'mr_filter_recipe_content', 10, 3 );
@@ -41,6 +47,7 @@ add_action( 'admin_init', 'mr_admin_init' );
 add_action( 'enqueue_block_editor_assets', 'mr_enqueue_block_editor_assets' );
 add_action( 'enqueue_block_assets', 'mr_enqueue_block_assets' );
 add_action( 'widgets_init', 'mr_widgets_init' );
+add_action( 'mr_daily_recipe_hook', 'mr_daily_generate_recipe');
 
 // Shortcodes
 
