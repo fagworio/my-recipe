@@ -36,7 +36,14 @@ function mr_rate_recipe() {
     ), 1);
 
     update_post_meta( $post_ID, 'myrecipe_data', $recipe_data);
+    
+    do_action('my_recipe_rated', [
+        'post_id' =>  $post_ID,
+        'rating'    =>  $rating,
+        'user_IP'   =>  $user_IP
+    ]);
 
     $output         =   [ 'status'   =>  2 ];
+    
     wp_send_json( $output );
 }
