@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_admin_init() {
     include( 'columns.php' );

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_dashboard_widget() {
 	wp_add_dashboard_widget( 
@@ -32,7 +32,6 @@ function mr_latest_recipe_widget_display() {
 				</a>
 			</li>
 		<?php
-
 		}
 	}
 

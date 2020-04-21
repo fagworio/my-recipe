@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_enqueue_block_editor_assets(){
     wp_register_script(

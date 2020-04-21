@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_rate_recipe() {
     global $wpdb;
