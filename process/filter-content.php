@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_filter_recipe_content( $content ){
     if( !is_singular('myrecipe') ) {

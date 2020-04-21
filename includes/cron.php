@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_daily_generate_recipe(){
 	set_transient( 'mr_daily_recipe', 
