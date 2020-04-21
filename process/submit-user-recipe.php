@@ -26,4 +26,4 @@ function mr_submit_user_recipe(){
 	
 	$output['status']               =   2;
 	wp_send_json($output);
-	}
+}
