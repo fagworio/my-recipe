@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_submit_user_recipe(){
 	$output                         = [ 'status' => 1 ];

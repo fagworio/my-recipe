@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_enqueue_scripts() {
     wp_register_style( 'mr_rateit', plugins_url( '/assets/rateit/rateit.css', RECIPES_PLUGIN_URL ) );

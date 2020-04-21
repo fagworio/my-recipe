@@ -5,9 +5,12 @@ function mr_activate_plugin(){
 		wp_die( __('You must update Wordpress to use this plugin.', 'myrps' ) );
 	}
 
+	my_recipe_init();
+	flush_rewrite_rules();
+
 	global $wpdb;
-	$createSQL      =   "
-		CREATE TABLE `". $wpdb->prefix ."myrecipes_ratings` (
+	$createSQL	=	"
+			CREATE TABLE `". $wpdb->prefix ."myrecipes_ratings` (
 			`ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 			`recipe_id` BIGINT(20) UNSIGNED NOT NULL,
 			`rating` FLOAT(3,2) UNSIGNED NOT NULL,
@@ -22,4 +25,4 @@ function mr_activate_plugin(){
 		dbDelta( $createSQL );
 
 		wp_schedule_event( time(), 'daily', 'mr_daily_recipe_hook');
-} 
+}

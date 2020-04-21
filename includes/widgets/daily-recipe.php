@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class MR_Daily_Recipe_Widget extends WP_Widget {
     /**
@@ -91,7 +91,7 @@ class MR_Daily_Recipe_Widget extends WP_Widget {
 			</h3>
 		</div>
 
-		<?php 
+		<?php
         echo $after_widget;
 	}
 }

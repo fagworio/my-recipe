@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function my_recipe_init() {
     $labels = array(

@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
 function mr_save_post_admin( $post_id, $post, $update ) {
     $recipe_data                   =   get_post_meta( $post_id, 'myrecipe_data', true );

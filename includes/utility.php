@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_get_random_recipe() {
 	global $wpdb;

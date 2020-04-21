@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function mr_add_new_recipe_columns( $columns ) {
     $new_columns                =   [];
