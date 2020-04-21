@@ -95,4 +95,3 @@ class MR_Daily_Recipe_Widget extends WP_Widget {
         echo $after_widget;
 	}
 }
-    

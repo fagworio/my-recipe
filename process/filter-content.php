@@ -33,5 +33,3 @@ function mr_filter_recipe_content( $content ){
     return $my_recipe_html .  $content;
 
 }
-
-
