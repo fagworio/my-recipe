@@ -27,4 +27,3 @@ function mr_manage_recipe_columns( $column, $post_id ){
             break;
     }
 }
-
