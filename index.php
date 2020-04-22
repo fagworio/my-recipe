@@ -35,6 +35,8 @@ include( 'includes/utility.php' );
 include( 'includes/shortcode/creator.php' );
 include( 'process/submit-user-recipe.php' );
 include( 'includes/admin/dashboard-widgets.php' );
+include( 'includes/admin/menus.php' );
+include( 'includes/admin/options-page.php' );
 
 // Hooks
 register_activation_hook( __FILE__, 'mr_activate_plugin',10 );
@@ -53,6 +55,7 @@ add_action( 'mr_daily_recipe_hook', 'mr_daily_generate_recipe');
 add_action( 'wp_ajax_mr_submit_user_recipe', 'mr_submit_user_recipe' );
 add_action( 'wp_ajax_nopriv_mr_submit_user_recipe', 'mr_submit_user_recipe' );
 add_action( 'wp_dashboard_setup', 'mr_dashboard_widget' );
+add_action( 'admin_menu', 'mr_admin_menu' );
 
 // Shortcodes
 add_shortcode( 'recipe_creator', 'mr_recipe_creator_shortcode' );
