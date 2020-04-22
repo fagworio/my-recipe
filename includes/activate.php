@@ -8,7 +8,7 @@ function mr_activate_plugin(){
 
     global $wpdb;
     $createSQL      =   "
-    CREATE TABLE `" . $wpdb->prefix . "wp_myrecipes_ratings` (
+    CREATE TABLE `" . $wpdb->prefix . "myrecipes_ratings` (
         `ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
         `recipe_id` BIGINT(20) UNSIGNED NOT NULL,
         `rating` FLOAT(3,2) UNSIGNED NOT NULL,
