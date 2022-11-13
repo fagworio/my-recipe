@@ -18,7 +18,7 @@
     "raw-loader": "^4.0.0",
     "sass-loader": "^8.0.2",
     "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.3.12"
   },
   "version": "1.0.0",
   "license": "MIT"
